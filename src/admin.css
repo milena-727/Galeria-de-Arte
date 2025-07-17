@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* este es nuevo */
+}
+
+body {
+    /*width: 100%;
+    height: 100%; este era el que estaba antes*/
+    background-color: #C3C3C3;
+    font-family: 'roboto', sans-serif;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    /*---------*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Empuja el footer al fondo si hay poco contenido */
+    
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /*border-bottom: 1px solid #ccc;*/
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Barra de navegación */
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Botones de Colecciones */
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botones-coleccion {
+    background-color: #f21010;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: medium;
+
+}
+
+.botones-coleccion:hover {
+    color: white;
+    background-color: #000000;
+}
+
+.botones-coleccion a {
+    color: #ffffff;
+}
+
+/* Botón de Cerrar Sesión del Administración */
+.CerrarSesion {
+    background-color: #f21010;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: medium;
+}
+
+.CerrarSesion:hover {
+    color: white;
+    background-color: #000000;
+}
+
+.CerrarSesion a {
+    color: #ffffff;
+}
+
+.nav-logo {
+    margin-left: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    /* Evita que se achique */
+}
+
+.nav-logo img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo-titulo {
+    font-size: 0.9rem;
+    margin-top: -15px;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Aca empieza el Banner donde esta el Ninja */
+
+.img-ninja-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background-color: #8D8B8B;
+    width: 100%;
+    height: 100vh;
+}
+
+.img-ninja img {
+    margin-top: 300px;
+    margin-left: 100px;
+    position: absolute;
+    z-index: 10;
+    object-fit: cover;
+    /* opcional para recorte bonito */
+}
+
+.circle-background {
+    width: 300px;
+    height: 300px;
+    background-color: #f21010;
+    background-position: 50% 50%;
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    transform: translate(-30%, -10%);
+    clip-path: circle(50% at 50% 50%);
+    z-index: 2;
+    width: 400px;
+    /* más ancho */
+    height: 400px;
+    /* más alto */
+}
+
+.img-letrero-vertical img {
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg) translateY(100px) translateX(500px);
+    transform-origin: center center;
+    z-index: 10;
+}
+
+/*------ Aca empieza el contenido de las CARDS en la parte del Administrador---------- */
+
+.container1 {
+    display: flex;
+    margin: 30px;
+}
+
+.container2 {
+    display: flex;
+    margin: 30px;
+}
+
+.container3 {
+    display: flex;
+    margin: 30px;
+}
+
+/* Botones de Agregar Cards Ilustraciones, Pinturas y Caligrafías */
+.btn-add-ilustracion {
+    background-color: #29A71A;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 190px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    transform: translateY(-50px) translateX(1200px);
+    /* Esto mueve el botón */
+}
+
+.btn-add-pintura {
+    background-color: #29A71A;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 190px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    transform: translateY(-50px) translateX(1200px);
+    /* Esto mueve el botón */
+}
+
+.btn-add-caligrafia {
+    background-color: #29A71A;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 190px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    transform: translateY(-50px) translateX(1200px);
+    /* Esto mueve el botón */
+}
+
+/* Esto son los titulos de las secciones */
+.titulo-ilustraciones {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.titulo-pinturas {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.titulo-caligrafias {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px;
+    padding: 10px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align:left;
+    z-index: 10000;
+}
+
+.modal-content input, textarea {
+    font-size: medium;
+    font-weight: normal !important;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    text-align: justify;
+}
+
+.contenedorCards-ilustraciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contenedorCards-pinturas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contenedorCards-caligrafias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card-text,
+.card-tipo,
+.card-pais,
+.card-autor {
+    font-size: medium;
+    font-weight: normal !important;
+}
+
+.card-body p {
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*--------------BOTON NINJA DE VOLVER AL INICIO--------------*/
+.btn-ninja {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #000;
+    background-color: #000000;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  
+  .btn-ninja:hover {
+    transform: scale(1.05);
+  }
+  
+/*--------------------------------ACÁ EMPIEZA EL FOOTER----------------------------*/
+.footer {
+    background-color: #000000;
+    height: 150px;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.iconosfooter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.iconosfooter img {
+    margin-top: 50px;
+    width: 20px;
+}
+
+.derechos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.derechos a {
+    text-decoration: none;
+    color: #f21010;
+    font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+.whatsapp {
+    /* transform: translate(1450px, -30px); */
+    position: fixed;
+    bottom: 120px;
+    right: 0;
+    margin-right: 15px;
+
+}
+/*---------------------------ACÁ TERMINA EL FOOTER----------------------------*/
