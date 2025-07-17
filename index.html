@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pagina WEB de Milena González Castrillón">
+  <meta name="keywords" content="pagina web, galería de arte, shinobi ninjutsu, milena gonzález castrillón">
+  <meta name="sitedomain" content="https://example.com">
+  <meta name="organization" content="cedeco" />
+  <meta name="author" content="Milena González Castrillón" />
+  <meta name="designer" content="Milena González Castrillón" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="revisit-after" content="15days" />
+  <!-- Tipografias -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo -->
+  <link rel="stylesheet" href="stylePrincipal.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="img/logo-Galeria.png" type="image/x-icon">
+
+  <title>Galería de Arte-ShinobiNinjutsu</title>
+
+</head>
+
+<body>
+
+  <!-- Script para mostrar/ocultar el menú desplegable del boton COLECCIONES -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownBtn = document.querySelector(".dropdown-btn");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (!e.target.matches('.dropdown-btn')) {
+          dropdownMenu.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Aquí empieza mi barra de navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="dropdown">
+          <a href="#fullscreenView">Inicio</a>
+          <button class="dropdown-btn">Colecciones</button>
+          <div class="dropdown-menu">
+            <a href="http://127.0.0.1:5500/src/ilustraciones/ilustraciones.html">Ilustraciones</a>
+            <a href="http://127.0.0.1:5500/src/pinturas/pinturas.html">Pinturas</a>
+            <a href="http://127.0.0.1:5500/src/caligrafias/caligrafias.html">Caligrafías</a>
+          </div>
+        </div>
+        <a href="#contenedorJuntas">Quienes somos</a>
+      </div>
+
+
+
+      <!-- Aquí se mostrarán las cards del admin -->
+      <div id="galeria" class="galeria-container"></div>
+
+
+      <div class="nav-logo">
+        <img src="img/logo-Galeria_de_Arte.png" alt="Logo">
+        <h1 class="logo-titulo" id="tituloHeader">Galería de Arte Shinobi Ninjutsu</h1>
+      </div>
+
+      <ul class="nav-right">
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#contactanos">Contacto</a></li>
+        <li>
+          <div class="iniciarSesion">
+            <a href="login.html">Administración</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <!-- Aquí termina mi barra de navegación -->
+
+
+  <!-- Aquí empieza mi Slider1 donde muestro la imagen grande -->
+  <!-- Vista a pantalla completa -->
+  <div class="fullscreen-view" id="fullscreenView">
+
+    <!--Capa que oscurece la imagen -->
+    <div class="dark-overlay"></div>
+
+    <img src="img/imagen1.jpg" id="fullscreenImage" alt="Ampliada">
+
+    <div class="slider-controls">
+      <div class="cards" id="cardList">
+        <img src="img/imagen1.jpg" class="card active" alt="1">
+        <img src="img/imagen2.jpg" class="card" alt="2">
+        <img src="img/imagen3.jpg" class="card" alt="3">
+        <img src="img/imagen4.jpg" class="card" alt="4">
+        <img src="img/imagen5.jpg" class="card" alt="5">
+        <img src="img/imagen6.jpg" class="card" alt="6">
+        <img src="img/imagen7.jpg" class="card" alt="7">
+      </div>
+    </div>
+  </div>
+
+  <!-- Info descripción de las imagenes -->
+  <div class="info-box" id="infoBox">
+    <h2 id="imageName">Nombre de la imagen</h2>
+    <p id="imageDescription">Descripción breve de la imagen aquí.</p>
+  </div>
+
+
+  <!-- Controles abajo del slider1 -->
+  <div class="controls">
+    <button class="arrow modern" id="prevBtn">&#9664;</button>
+    <span id="imageCounter">1 / 4</span>
+    <button class="arrow modern" id="nextBtn">&#9654;</button>
+  </div>
+  <!-- Aquí termina mi Slider1 donde muestro la imagen grande -->
+
+
+  <!-- Aquí empieza mi seccion de Quienes somos e Imagen Ninja -->
+  <!-- Contenedor de texto y la imagen ninja -->
+  <div id="contenedorJuntas" class="secciones-juntas">
+    <section class="containertexto">
+      <div class="japones">
+        <img src="img/quienessomos.png" alt="Quienes somos" width="150px">
+      </div>
+      <div class="español">
+        <p class="titulo">Quienes somos</p>
+        <p class="texto">En Galería de Arte Shinobi Ninjutsu, fusionamos
+          el arte con el espíritu ancestral oriental.
+          Somos un espacio dedicado a mostrar la riqueza
+          visual y espiritual del arte Chino y Japonés,
+          explorando estilos ilustrativos, pintura tradicional
+          y caligrafía con alma.
+          Aquí, cada trazo cuenta una historia, cada obra
+          es un susurro del pasado y una expresión del
+          presente.
+          Creemos en el poder del arte como camino,
+          como filosofía, como un acto ninja de belleza y
+          resistencia cultural.
+        </p>
+        <div class="letrero">
+          <img src="img/letrerochino.png" alt="letrero" width="150px">
+        </div>
+
+        <div class="video">
+          <a href="video/GaleriadeArte2.mp4" target="_blank">Galeria de Arte</a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+  <!-- Contenedor imagen ninja -->
+  <section class="containerninja">
+    <div class="ninja">
+      <img src="img/imagenNinja.png" alt="ninja">
+    </div>
+  </section>
+  </div>
+  <!-- Aquí Termina mi seccion de Quienes somos e Imagen Ninja -->
+
+  <!--Acá empieza Slider infinito --->
+  <section class="container-sliderInfinito">
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="img/arte1.png" alt="Imagen 1" /></div>
+        <div class="slide"><img src="img/arte2.png" alt="Imagen 2" /></div>
+        <div class="slide"><img src="img/arte3.png" alt="Imagen 3" /></div>
+        <div class="slide"><img src="img/arte4.png" alt="Imagen 4" /></div>
+        <div class="slide"><img src="img/arte5.png" alt="Imagen 5" /></div>
+        <div class="slide"><img src="img/arte6.png" alt="Imagen 6" /></div>
+        <div class="slide"><img src="img/arte1.png" alt="Imagen 1" /></div>
+        <div class="slide"><img src="img/arte2.png" alt="Imagen 2" /></div>
+        <div class="slide"><img src="img/arte3.png" alt="Imagen 3" /></div>
+        <div class="slide"><img src="img/arte4.png" alt="Imagen 4" /></div>
+        <div class="slide"><img src="img/arte5.png" alt="Imagen 5" /></div>
+        <div class="slide"><img src="img/arte6.png" alt="Imagen 6" /></div>
+      </div>
+    </div>
+  </section>
+  <!-----------------Acá termina Slider infinito---------------------->
+
+
+
+  <!-----------------------Acá empieza la Sección de ARTISTAS------------>
+  <section class="container-artistas" id="artistas">
+    <div class="titulo-artistas">
+      <h1 class="titulo-artistas1">Artistas</h1>
+      <p class="contenido-artistas">Aquí encontrarás una selección de artistas importantes <br>
+        de las culturas de Japón y China.</p>
+    </div>
+    <section class="contenedor-artistas">
+      
+      <div class="slider-artistas">
+        <button class="flecha-izquierda">&#9664;</button>
+  
+        <div class="sliderArtistas">
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-1.png" alt="Artista 1">
+            <p><strong>Nombre:</strong> Hayao Miyazaki</p>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Estilo:</strong> Ilustración Japonesa y Anime</p>
+            <p class="descripcion"style="display: none;">
+              Hayao Miyazaki es un director de cine de animación, animador, ilustrador, empresario, mangaka y <br>
+              productor de anime japonés, de renombre internacional y con una carrera de cinco décadas. <br>
+              Junto con Isao Takahata fundó Studio Ghibli, un estudio de películas y animación.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <!-- Repite las tarjetas -->
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-2.png" alt="Artista 2">
+            <p><strong>Nombre:</strong> Yayoi Kusama</p>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Estilo:</strong> Minimalismo y el arte pop</p>
+            <p class="descripcion" style="display: none;">
+              Es una figura en la escena artística, provocó cambios significativos en el minimalismo y <br>
+              el arte pop al utilizar la repetición de manera única, especialmente con los lunares. <br>
+              Su impacto artístico se extendió a la performance, la escultura y las instalaciones, ya que <br>
+              buscaba difuminar las fronteras entre uno mismo y lo infinito.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-3.png" alt="Artista 3">
+            <p><strong>Nombre:</strong> Kōrin Ogata</p>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Estilo:</strong> Artes Decorativas</p>
+            <p class="descripcion" style="display: none;">
+              Quien hizo contribuciones a la escuela de pintura Rinpa. <br>
+              Fundió habilidosamente la estética con técnicas innovadoras, insuflando nueva vida en las artes decorativas. <br>
+              El énfasis de Ogata en diseños, paletas de colores vibrantes y detalles intrincados <br>
+              añadió una vitalidad al arte japonés.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-4.png" alt="Artista 4">
+            <p><strong>Nombre:</strong> Hiroshi Sugimoto</p>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Estilo:</strong> Fotografía artistica</p>
+            <p class="descripcion" style="display: none;">
+              Su trabajo captura la belleza atemporal como ningún otro.  <br>
+              Con su cámara,captura la esencia de paisajes y maravillas arquitectónicas magníficas, <br>
+              resaltando sus cualidades atemporales y sobrenaturales.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-5.png" alt="Artista 5">
+            <p><strong>Nombre:</strong> Takashi Murakami</p>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Estilo:</strong> Arte japonés y cultura Pop</p>
+            <p class="descripcion" style="display: none;">
+              Se erige como un pionero en la escena artística, acuñando el término «Superflat» <br>
+              para describir su fusión de arte tradicional japonés con la cultura pop moderna. <br>
+              Su influencia va más allá del lienzo, impactando en la moda, la animación y la cultura popular.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-6.png" alt="Artista 6">
+            <p><strong>Nombre:</strong> Zhang Xiaogang</p>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Estilo:</strong> Surrealismo</p>
+            <p class="descripcion" style="display: none;">
+              Las pinturas en su serie Bloodline son predominantemente retratos monocromáticos y estilizados de los chinos, <br>
+              generalmente con ojos grandes y depilados oscuros, posados de una manera rígida que recuerda deliberadamente <br>
+              a los retratos familiares de los años 50 y 60. Recientemente, también creó esculturas, traduciendo por primera vez <br>
+              en tres dimensiones muchos personajes del tipo vistos en su serie de retratos "Bloodlines, Gran Familia".
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-7.png" alt="Artista 7">
+            <p><strong>Nombre:</strong> Chang Dai-chien</p>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Estilo:</strong> Impresionismo y Expresionismo</p>
+            <p class="descripcion" style="display: none;">
+              Chang Dai-chien, pintor tradicional chino, uno de los más cotizados de su país. <br>
+              Nació en una familia artística con dificultades económicas, cuyos miembros se habían convertido al catolicismo romano.<br>
+              Aparte de la pintura tradicional de su país también cultivó estilos próximos al impresionismo y al expresionismo.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-8.png" alt="Artista 8">
+            <p><strong>Nombre:</strong> Guan Daosheng</p>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Estilo:</strong> Pintura con bambú</p>
+            <p class="descripcion" style="display: none;">
+              Guan Daosheng pintora, calígrafa y poetisa china de la dinastía Yuan. <br>
+              Era la esposa del calígrafo Zhao Mengfu, a menudo considerado como el mayor artista del período Yuan temprano. <br>
+              Su hijo era Zhao Yong. El Emperador Ren fue un gran coleccionista de los pergaminos de los tres.
+            </p>
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-9.png" alt="Artista 9">
+            <p><strong>Nombre:</strong> Qi Baishi</p>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Estilo:</strong> Retratista y pintor constumbristas</p>
+            <p class="descripcion" style="display: none;">
+              Qi Baishi interiorizó los elementos de la pintura tradicional y los desarrolló considerablemente. <br>
+              Sus pinturas muestran su habilidad para representar las cosas mediante estructuras simples trazadas <br>
+              con rápidas y habilidosas pinceladas.
+            </p>  
+            <button class="saber-mas-btn" style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <div class="card-artistas">
+            <img src="./img/ARTISTA-10.png" alt="Artista 10">
+            <p><strong>Nombre:</strong> Duan Jianyu</p>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Estilo:</strong> Arte visual</p>
+            <p class="descripcion" style="display: none;">
+              El estilo de las pinturas de Duan Jianyu se basa en la realidad cotidiana y luego <br>
+              evoluciona para desvanecerse y deslizarse lentamente hacia el mundo de la mente. <br>
+              Este tipo de técnica narrativa aparece constantemente en las creaciones de la artista.
+            </p>
+            <button class="saber-mas-btn"style="margin-top: 20px;">Saber más</button>
+          </div>
+  
+          <!-- ...Acá se van a añadir más tarjetas si quiero------>
+        </div>
+  
+        <button class="flecha-derecha">&#9654;</button>
+      </div>
+  
+      <!-- Modal para "Saber más" -->
+      <div id="modal-artista" class="modal-artista">
+        <div class="modal-content">
+          <span class="cerrar">X</span>
+          <img src="" alt="Ilustración" id="modal-img-artista">
+          <p class="descripcion" id="modal-desc"></p>
+        </div>
+      </div>
+    </section>
+  </section>
+  
+  <!------------------Acá termina la Sección de ARTISTAS------------------------>
+
+
+  <!-----------------Acá empieza la Sección de Contactanos---------------------->
+  <section id="contactanos">
+    <div class="contacto">
+      <div class="contactoMapa">
+        <h2 class="titulo-contacto">Contáctanos</h2>
+        <p class="texto-subtitulo">Esperamos tener noticias suyas pronto.</p>
+        <p class="parrafo">
+          Galería de Arte Shinobi Ninjutsu
+          <br>
+          China y Japón, <b style="color:#f21010 ; font-family:Special Gothic Expanded One">Juntos por el Arte.</b>
+        </p>
+        <div class="mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14767.785593997261!2d114.1377234871582!3d22.2800202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404006524aef617%3A0xc09670c309425c6e!2sgdm%20(Galerie%20du%20Monde)!5e0!3m2!1ses-419!2sco!4v1745713175328!5m2!1ses-419!2sco"
+            width="400" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <!-- Formulario contacto -->
+      <div class="contacto-form">
+        <form action="">
+          <input type="text" placeholder="Nombre">
+          <input type="email" placeholder="Correo electrónico">
+          <input type="tel" placeholder="Teléfono">
+          <input type="text" placeholder="Dirección">
+          <textarea placeholder="Mensaje"></textarea>
+          <button class="botonEnviar" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!--Acá termina la Sección de Contactanos -->
+
+
+  <!--Acá empieza el Footer -->
+
+  <a href="https://api.whatsapp.com/send/?phone=#&text=%C2%A1Hola%21+Quisiera+saber+m%C3%A1s+sobre+ShinobiNinjutsuGaleria.&type=phone_number&app_absent=0"
+    target="_blank"><img class="whatsapp" src="img/whatsapp footer.png" alt=""></a>
+  <footer>
+    <div class="iconosfooter">
+      <a href=""><img src="img/instagram-footer.png" alt=""></a>
+      <a href=""><img src="img/linkedin-footer.png" alt=""></a>
+      <a href=""><img src="img/twitter-footer.png" alt=""></a>
+    </div>
+    <div class="derechos">
+      <p>© 2025 <a href="#">MilenaGC</a> Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!--Acá termina el Footer -->
+
+
+  <!-- Scripts -->
+
+  <script src="slider1.js"></script>
+  <script src="mainPrincipal.js" type="module"></script>
+  <script src="sliderArtistas.js"></script>
+</body>
+
+</html>
