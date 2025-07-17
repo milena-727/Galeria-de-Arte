@@ -46,4 +46,3 @@ botones.forEach((btn, i) => {
 cerrar.addEventListener("click", () => {
     modal.style.display = "none";
 });
-

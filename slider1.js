@@ -90,8 +90,3 @@ nextBtn.addEventListener('click', () => {
 });
 
 startAutoplay();
-
-
-
-
-
