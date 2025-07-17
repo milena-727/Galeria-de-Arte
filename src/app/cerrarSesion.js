@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           await signOut(auth);
           console.log("Sesión cerrada exitosamente. 🥳");
-          window.location.href = "index.html";
+          window.location.href = "http://127.0.0.1:5500/index.html";
         } catch (error) {
           console.error("Error cerrando sesión: 😭", error);
           alert("Oops, algo falló cerrando sesión. Intenta otra vez 🙈");
